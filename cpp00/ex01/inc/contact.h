@@ -1,19 +1,8 @@
-#pragma once
 #ifndef CONTACT_H_
 #define CONTACT_H_
-
-
 #include <iostream>
 
 class Contact {
-
-private:
-
-	std::string _firstname;
-	std::string _lastname;
-	std::string _phoneNumber;
-	std::string _nickname;
-	std::string _darkestSecret;
 
 public:
 
@@ -28,6 +17,14 @@ public:
 	void setPhoneNumber(const std::string& phonenumber);
 	void setLastname(const std::string& lastname);
 	void setDarkestsecret(const std::string& darkestsecret);
+
+private:
+
+    std::string _firstname;
+    std::string _lastname;
+    std::string _phoneNumber;
+    std::string _nickname;
+    std::string _darkestSecret;
 
 };
 

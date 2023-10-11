@@ -1,15 +1,10 @@
-#pragma once
 #ifndef PHONEBOOK_H_
 #define PHONEBOOK_H_
 #include "iostream"
 #include "contact.h"
+#include "validation.h"
 
 class Phonebook {
-
-private:
-
-	Contact _contact[8];
-	int _putIndex;
 
 public:
 
@@ -19,6 +14,12 @@ public:
 	void welcomeMessage();
 
     Phonebook();
+
+private:
+
+    Contact _contact[8];
+    int _putIndex;
+
 
 };
 

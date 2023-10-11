@@ -2,7 +2,7 @@ NAME	=	PhoneBook
 SRC		=	main.cpp
 CC		= 	c++
 CFLAGS	=	-Wall -Wextra -Werror
-STD		=	-std=c++98
+STD		=	-std=c++11
 FILES   =   phonebook.cpp validation.cpp contact.cpp main.cpp
 
 all	:	$(NAME)

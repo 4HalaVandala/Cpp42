@@ -10,7 +10,7 @@ int main() {
 	pb.welcomeMessage();
 	std::string input = "";
 
-	while (1) {
+	while (true) {
 		std::cin >> input;
 		
 		int inputType = vld.validateInput(input); // returning  "0-3";
@@ -38,7 +38,7 @@ int main() {
 			std::cin >> indexToSearch;
 
 
-			pb.getContact(0);
+			pb.getContact(indexToSearch);
 		} else {
             vld.displayError(0);
         }

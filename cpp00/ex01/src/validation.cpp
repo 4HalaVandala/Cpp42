@@ -1,10 +1,5 @@
 #include "../inc/validation.h"
 
-
-void Validation::displaySearch( void ) {
-	std::cout << "Todo display search \n";
-}
-
 void Validation::displayError(const int& inputCode) {
 	if (inputCode == 0) {
 		std::cout << "Invalid input! USAGE : EXIT, ADD, SEARCH" << std::endl;

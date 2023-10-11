@@ -9,11 +9,13 @@ void Phonebook::increaseIndex() {
 }
 
 void Phonebook::setContact(const std::string& firstname, const std::string& lastname, const std::string& nickname, const std::string& phoneNumber, const std::string& darkestSecret) {
-	_contact[_putIndex].setFirstname(firstname);
-    _contact[_putIndex].setDarkestsecret(darkestSecret);
-    _contact[_putIndex].setNickname(nickname);
-    _contact[_putIndex].setLastname(lastname);
-    _contact[_putIndex].setPhoneNumber(phoneNumber);
+     auto& selected_contact = _contact[_putIndex];
+
+    selected_contact.setFirstname(firstname);
+    selected_contact.setDarkestsecret(darkestSecret);
+    selected_contact.setNickname(nickname);
+    selected_contact.setLastname(lastname);
+    selected_contact.setPhoneNumber(phoneNumber);
 
     std::cout<< "Contact successfully added with index " << _putIndex << std::endl;
     increaseIndex();
@@ -24,7 +26,8 @@ void Phonebook::setContact(const std::string& firstname, const std::string& last
 	std::string lastname = _contact[index].getLastname();
 	std::string nickname = _contact[index].getNickname();
 
-	std::cout << index <<  name <<  lastname << nickname;
+
+	std::cout << "Index: "<< index << "\n" << "Name: " <<  name << "\n" << "Lastname: " << lastname << "\n" << "Nickname: " << nickname << "\n";
 }
 
   void Phonebook::welcomeMessage() {
