@@ -17,7 +17,7 @@ public:
     Fixed(const float &copy);
     Fixed(const int &copy);
 
-    Fixed& operator =(const Fixed &copy) const;
+    Fixed& operator =(const Fixed &copy);
     int operator >(const Fixed &copy) const;
     int operator <(const Fixed &copy) const;
     int operator >=(const Fixed &copy) const;
@@ -25,10 +25,10 @@ public:
     int operator ==(const Fixed &copy) const;
     int operator !=(const Fixed &copy) const;
 
-    Fixed& operator +(const Fixed &copy);
-    Fixed& operator -(const Fixed &copy) const;
-    Fixed operator *(const Fixed &copy);
-    Fixed operator /(const Fixed &copy);
+    Fixed operator +(const Fixed &copy) const;
+    Fixed operator -(const Fixed &copy) const;
+    Fixed operator *(const Fixed &copy) const;
+    Fixed operator /(const Fixed &copy) const;
 
     Fixed & operator--(void);
     Fixed	operator--(int);

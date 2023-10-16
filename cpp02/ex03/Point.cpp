@@ -5,38 +5,34 @@
 #include "Point.h"
 
 Point::Point():_x(0),_y(0)
-{}
-
-Point::Point( Point const & copy )
 {
-    this->_x = copy._x;
-    this->_y = copy._y;
 }
 
-Point::Point( float const &a, float const &b )
+Point::Point( Point const & copy ):_x(copy._x), _y(copy._y)
 {
-    this->_x = a;
-    this->_y = b;
+}
+
+Point::Point( float const &a, float const &b ):_x(a),_y(b)
+{
 }
 
 Point::~Point()
 {
-    std::cout << "Destructor called \n";
 }
 
-Point& Point::operator = (Point &copy)
+Point Point::operator = (const Point &copy)
 {
-    this->_x = copy._x;
-    this->_y = copy._y;
-    return (*this);
+  Point tmp(copy);
+
+  return tmp;
 }
 
 //
 
 bool Point::bsp(Point const &a, Point const &b, Point const &c, Point const &s)
 {
-    float as_x = s._x - a._x;
-    float as_y = s._y - a._y;
+    Fixed as_x = s._x - a._x;
+    Fixed as_y = s._y - a._y;
 
     bool s_ab = (b._x - a._x) * as_y - (b._y - a._y) * as_x > 0;
 

@@ -62,7 +62,6 @@ Fixed::Fixed(const int &copy)
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called " << std::endl;
 }
 
 // * OPERATORS OVERLOADING *
@@ -101,7 +100,7 @@ int Fixed::operator !=(const Fixed &copy) const
 
 // * ASSIGNMENT OPERATOR *
 
-Fixed &Fixed::operator=( Fixed const &copy ) const
+Fixed &Fixed::operator=( Fixed const &copy )
 {
     if (this != &copy) {
         this->setRawBits(copy.getRawBits());
@@ -111,19 +110,23 @@ Fixed &Fixed::operator=( Fixed const &copy ) const
 
 // * ARITHMETIC OPERATORS *
 
-Fixed& Fixed::operator +(const Fixed &copy)
+Fixed Fixed::operator +(const Fixed &copy) const
 {
-    this->setRawBits(this->getRawBits() + copy.getRawBits());
-    return (*this);
+    Fixed temp;
+
+    temp._fixedPointValue = copy.getRawBits() + this->_fixedPointValue;
+    return (temp);
 }
 
-Fixed& Fixed::operator -(const Fixed &copy) const
+Fixed Fixed::operator -(const Fixed &copy) const
 {
-    this->setRawBits(this->getRawBits() - copy.getRawBits());
-    return (*this);
+    Fixed temp;
+
+    temp._fixedPointValue = this ->getRawBits() - copy.getRawBits();
+    return (temp);
 }
 
-Fixed Fixed::operator *(const Fixed &copy)
+Fixed Fixed::operator *(const Fixed &copy) const
 {
     Fixed temp;
 
@@ -131,7 +134,7 @@ Fixed Fixed::operator *(const Fixed &copy)
     return (temp);
 }
 
-Fixed Fixed::operator /(const Fixed &copy)
+Fixed Fixed::operator /(const Fixed &copy) const
 {
     Fixed temp;
 
