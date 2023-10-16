@@ -15,7 +15,7 @@ public:
     Point( float const &a, float const &b );
     ~Point();
 
-    Point& operator = (Point &copy);
+    Point operator = (const Point &copy);
 
     bool bsp(Point const &a, Point const &b, Point const &c, Point const &s);
 

@@ -25,10 +25,10 @@ public:
     int operator ==(const Fixed &copy) const;
     int operator !=(const Fixed &copy) const;
 
-    Fixed& operator +(const Fixed &copy);
-    Fixed& operator -(const Fixed &copy);
-    Fixed operator *(const Fixed &copy);
-    Fixed operator /(const Fixed &copy);
+    Fixed operator +(const Fixed &copy) const;
+    Fixed operator -(const Fixed &copy) const;
+    Fixed operator *(const Fixed &copy) const;
+    Fixed operator /(const Fixed &copy) const;
 
     Fixed & operator--(void);
     Fixed	operator--(int);
